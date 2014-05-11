@@ -12,7 +12,7 @@ xcode-select --install
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
-​### Install rbenv and ruby-build
+### Install rbenv and ruby-build
 
 ```bash
 brew install rbenv
