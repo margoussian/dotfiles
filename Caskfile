@@ -26,3 +26,4 @@ cask install onepassword 2> /dev/null
 cask install cloud 2> /dev/null
 cask install alfred 2> /dev/null
 cask install hazel 2> /dev/null
+cask install cakebrew 2> /dev/null
