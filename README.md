@@ -18,6 +18,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew install rbenv
 brew install ruby-build
 ```
+Add `eval "$(rbenv init -)"` to `.bash_profile`
 
 ### Using Git and the bootstrap script
 
