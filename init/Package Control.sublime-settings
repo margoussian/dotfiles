@@ -1,15 +1,14 @@
 {
     "installed_packages":
     [
-        "Alignment",
-        "Better CoffeeScript",
-        "Boron Color Scheme",
-        "Color Schemes by carlcalderon",
+        "Color Highlighter",
         "ColorPicker",
         "DocBlockr",
         "Emmet",
         "GitGutter",
-        "Rust",
+        "SublimeLinter",
+        "SublimeLinter-jshint",
+        "SublimeLinter-jscs",
         "Theme - Flatland",
         "Theme - Soda",
         "Theme - Spacegray"

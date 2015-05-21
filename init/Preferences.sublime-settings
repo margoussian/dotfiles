@@ -27,7 +27,7 @@
         ".idea",
         "node_modules"
     ],
-    "font_face": "Inconsolata",
+    "font_face": "Menlo",
     "font_options":
     [
         "no_bold",
@@ -51,5 +51,6 @@
     "trim_trailing_white_space_on_save": true,
     "wide_caret": true,
     "word_wrap": true,
-    "wrap_width": 120
+    "wrap_width": 120,
+    "spacegray_sidebar_font_large": true
 }
