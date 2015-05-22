@@ -102,3 +102,7 @@ You could also install native apps with [`brew cask`](https://github.com/phinze/
 ```bash
 brew bundle ~/Caskfile
 ```
+
+### Sublime Configuration
+
+Place files inside init folder into ~/Library/Application Support/Sublime Text 3/Packages/User on OS X
