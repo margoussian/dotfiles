@@ -24,15 +24,9 @@ install bash-completion
 # Install wget with IRI support
 install wget --enable-iri
 
-# Install RingoJS and Narwhal
-# Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
-# install ringojs
-# install narwhal
-
 # Install more recent versions of some OS X tools
 install vim --override-system-vi
 install homebrew/dupes/grep
-install homebrew/php/php55 --with-gmp
 
 # This formula didn’t work well last time I tried it:
 #install homebrew/dupes/screen
