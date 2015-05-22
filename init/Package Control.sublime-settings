@@ -1,16 +1,16 @@
 {
-    "installed_packages":
-    [
-        "Color Highlighter",
-        "ColorPicker",
-        "DocBlockr",
-        "Emmet",
-        "GitGutter",
-        "SublimeLinter",
-        "SublimeLinter-jshint",
-        "SublimeLinter-jscs",
-        "Theme - Flatland",
-        "Theme - Soda",
-        "Theme - Spacegray"
-    ]
+  "installed_packages":
+  [
+    "Color Highlighter",
+    "ColorPicker",
+    "DocBlockr",
+    "Emmet",
+    "GitGutter",
+    "SublimeLinter",
+    "SublimeLinter-jshint",
+    "SublimeLinter-jscs",
+    "Theme - Flatland",
+    "Theme - Soda",
+    "Theme - Spacegray"
+  ]
 }
