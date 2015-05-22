@@ -1,66 +1,31 @@
-# Install command-line tools using Homebrew
 # Usage: `brew bundle Brewfile`
 
-# Make sure we’re using the latest Homebrew
 update
-
-# Upgrade any already-installed formulae
 upgrade
 
+install ack
+# Latest bash - Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
+install bash
+install bash-completion
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 install coreutils
-# Install some other useful utilities like `sponge`
-install moreutils
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
+install exiv2
 install findutils
-# Install GNU `sed`, overwriting the built-in `sed`
-install gnu-sed --default-names
-# Install Bash 4
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
-install bash
-install bash-completion
-
-# Install wget with IRI support
-install wget --enable-iri
-
-# Install RingoJS and Narwhal
-# Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
-# install ringojs
-# install narwhal
-
-# Install more recent versions of some OS X tools
-install vim --override-system-vi
-install homebrew/dupes/grep
-install homebrew/php/php55 --with-gmp
-
-# This formula didn’t work well last time I tried it:
-#install homebrew/dupes/screen
-
-# Install other useful binaries
-install ack
-#install exiv2
-#install foremost
 install git
+install git-extras
+install grep
 install hub
 install imagemagick --with-webp
-install lynx
-install nmap
-# install ucspi-tcp # `tcpserver` et al.
+install mongo
 install node
-install p7zip
-install pigz
-# install pv
+install redis
 install rename
-install rhino
-install sqlmap
-install tree
-install webkit2png
-install xpdf
-install zopfli
+install rethinkdb
 install ssh-copy-id
+install tree
+install vim --override-system-vi
+install webkit2png
+install wget --enable-iri
 
-install homebrew/versions/lua52
-
-# Remove outdated versions from the cellar
 cleanup
