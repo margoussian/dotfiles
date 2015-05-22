@@ -19,9 +19,12 @@ install hub
 install imagemagick --with-webp
 install mongo
 install node
+# May need to add `eval "$(rbenv init -)"` to `.bash_profile`
+install rbenv
 install redis
 install rename
 install rethinkdb
+install ruby-build
 install ssh-copy-id
 install tree
 install vim --override-system-vi
