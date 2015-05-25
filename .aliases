@@ -8,6 +8,8 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
 alias g="hub"
+alias gca="hub commit -a"
+alias gl="g l"
 alias h="history"
 alias j="jobs"
 
