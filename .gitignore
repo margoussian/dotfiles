@@ -1,17 +1,17 @@
 # Compiled Python files
 *.pyc
 
-# Folder view configuration files
+# OSX
 .DS_Store
-Desktop.ini
+.fseventsd
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.TemporaryItems
 
 # Thumbnail cache files
 ._*
 Thumbs.db
-
-# Files that might appear on external disks
-.Spotlight-V100
-.Trashes
 
 # Node.js
 lib-cov
