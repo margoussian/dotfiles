@@ -1,16 +1,8 @@
-# Shell prompt based on the Solarized Dark theme.
-# Screenshot: http://i.imgur.com/EkEtphC.png
-# Heavily inspired by @necolas’s prompt: https://github.com/necolas/dotfiles
-# iTerm → Profiles → Text → use 13pt Monaco with 1.1 vertical spacing.
-
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
     export TERM='gnome-256color';
 elif infocmp xterm-256color >/dev/null 2>&1; then
     export TERM='xterm-256color';
 fi;
-
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
 
 prompt_git() {
     local s='';
@@ -55,7 +47,6 @@ prompt_git() {
             echo '(unknown)')";
 
         [ -n "${s}" ] && s="[${s}]";
-
 
         echo -e "${1}[${branchName}]${s}";
     else
@@ -119,6 +110,5 @@ branch_color() {
     fi;
 }
 
-# Set the terminal title to the current working directory.
 export PS1="\[$blue\]\w \[\$(branch_color)\]\$(prompt_git)\[$yellow\]> \[$reset\]"
 # export PS2="\[$orange\]→ \[$reset\]"
