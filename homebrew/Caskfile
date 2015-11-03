@@ -20,3 +20,4 @@ cask install hazel 2> /dev/null
 cask install cakebrew 2> /dev/null
 cask install spectacle 2> /dev/null
 cask install little-snitch 2> /dev/null
+cask install aerial 2> /dev/null
