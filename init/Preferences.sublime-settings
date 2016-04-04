@@ -46,6 +46,7 @@
   "theme": "Spacegray.sublime-theme",
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,
+  "ensure_newline_at_eof_on_save": true,
   "wide_caret": true,
   "word_wrap": true,
   "wrap_width": 120,
