@@ -28,5 +28,6 @@ install vim --override-system-vi
 install webkit2png
 install wget --enable-iri
 install m-cli
+install mas
 
 cleanup
