@@ -1,5 +1,6 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -37,3 +38,10 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+export PATH="/usr/local/opt/thrift@0.9/bin:$PATH"
+
+function sandbox () {
+ current_branch=$(git branch | grep \* | cut -d ' ' -f2)
+ echo "Deploying sandbox to $current_branch"
+ aws --region us-west-2 codebuild start-build --project-name "node-site-venom-sandbox-build" --environment-variables-override name=GITLAB_BRANCH,value=$current_branch
+}

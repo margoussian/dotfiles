@@ -10,23 +10,18 @@ install bash-completion
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 install coreutils
-install exiv2
 install findutils
 install git
 install git-extras
 install grep
 install hub
 install imagemagick --with-webp
-install node
-# May need to add `eval "$(rbenv init -)"` to `.bash_profile`
-install rbenv
+install nvm
 install rename
-install ruby-build
 install ssh-copy-id
 install tree
-install vim --override-system-vi
 install webkit2png
-install wget --enable-iri
+install wget
 install m-cli
 install mas
 

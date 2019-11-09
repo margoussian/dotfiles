@@ -13,10 +13,6 @@ cask install sublime-text 2> /dev/null
 cask install the-unarchiver 2> /dev/null
 cask install virtualbox 2> /dev/null
 cask install vlc 2> /dev/null
-cask install flux 2> /dev/null
 cask install onepassword 2> /dev/null
-cask install hazel 2> /dev/null
 cask install cakebrew 2> /dev/null
-cask install spectacle 2> /dev/null
-cask install little-snitch 2> /dev/null
 cask install aerial 2> /dev/null

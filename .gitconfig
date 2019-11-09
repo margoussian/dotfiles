@@ -96,3 +96,6 @@
 
 [push]
     default = matching
+[user]
+	email = vmargoussian@edmunds.com
+	name = Vaheh Margoussian

@@ -28,3 +28,9 @@ npm-debug.log
 node_modules
 
 .extra
+
+DealerTrackMain.java
+LeaseQuoteMain.java
+CreditMain.java
+CuratedDealsMain.java
+UrlShortenerMain.java
