@@ -1,0 +1,32 @@
+# Compiled Python files
+*.pyc
+
+# MacOS
+.DS_Store
+.fseventsd
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.TemporaryItems
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Node.js
+lib-cov
+*.seed
+*.log
+*.dat
+*.out
+*.pid
+*.gz
+pids
+logs
+results
+npm-debug.log
+node_modules
+
+.extra
+
+
