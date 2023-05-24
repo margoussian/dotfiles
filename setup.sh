@@ -12,7 +12,7 @@ main() {
         "$ROOT/install-macos-dev-apps.sh"
         "$ROOT/config-git.sh"
         "$ROOT/install-macos-desktop-apps.sh"
-    elif [[ $(uname -s) == "Linux" ]]: then
+    elif [[ $(uname -s) == "Linux" ]]; then
         "$ROOT/install-linux.sh"
     fi
 }
