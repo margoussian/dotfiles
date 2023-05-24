@@ -50,16 +50,17 @@ brew "dust"
 brew "nvm"
 brew "ssh-copy-id"
 brew "m-cli"
-brew "imagemagick --with-webp"
 EOS
 
-brew install --cask imageoptim iterm2 onepassword aerial qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook suspicious-package
+brew install --cask imageoptim iterm2 1password aerial qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook suspicious-package
 
 brew install fish
 
 echo "$(brew --prefix)/bin/fish" | sudo tee -a /etc/shells
 sudo -v
 sudo chsh -s /usr/local/bin/fish $(whoami)
+
+fish_add_path /opt/homebrew/bin
 
 # fisher for completions. 4.1.0
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
