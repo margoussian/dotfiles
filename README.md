@@ -1,31 +1,11 @@
-#### Install Xcode Command Line Tools
+### Install
 
-```bash
-xcode-select --install
-```
+#### with git
 
-#### Install Homebrew (http://brew.sh)
+`
+git clone http://github.com/margoussian/dotfiles && cd dotfiles && ./setup.sh`
 
-```bash
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-```
+#### without git
 
-#### Install Homebrew formulae
+`curl -sL https://github.com/margoussian/dotfiles/archive/master.tar.gz | tar xz && cd dotfiles-master && ./setup.sh`
 
-```bash
-brew bundle ~/.dotfiles/homebrew/Brewfile
-```
-
-#### Install native apps with `brew cask`
-
-```bash
-brew bundle ~/.dotfiles/homebrew/Caskfile
-```
-
-#### Sensible OS X defaults and Sublime Configs
-
-When setting up a new Mac, you may want to set some sensible OS X defaults:
-
-```bash
-./.dotfiles/.osx
-```
