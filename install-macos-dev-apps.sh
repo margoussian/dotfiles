@@ -57,10 +57,6 @@ brew install --cask imageoptim iterm2 onepassword aerial qlstephen qlmarkdown qu
 
 brew install fish
 
-brew bundle --file=- <<-EOS
-brew "bash"
-EOS
-
 echo "$(brew --prefix)/bin/fish" | sudo tee -a /etc/shells
 sudo -v
 sudo chsh -s /usr/local/bin/fish $(whoami)
