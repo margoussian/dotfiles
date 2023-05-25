@@ -50,10 +50,9 @@ brew "dust"
 brew "nvm"
 brew "ssh-copy-id"
 brew "m-cli"
-brew "imagemagick --with-webp"
 EOS
 
-brew install --cask imageoptim iterm2 onepassword aerial qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook suspicious-package
+brew install --cask imageoptim iterm2 1password aerial qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook suspicious-package
 
 brew install fish
 
