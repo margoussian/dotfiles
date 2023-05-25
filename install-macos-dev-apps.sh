@@ -60,6 +60,8 @@ echo "$(brew --prefix)/bin/fish" | sudo tee -a /etc/shells
 sudo -v
 sudo chsh -s /usr/local/bin/fish $(whoami)
 
+fish_add_path /opt/homebrew/bin
+
 # fisher for completions. 4.1.0
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 
