@@ -1,7 +1,3 @@
-# You can override some default options with config.fish:
-#
-#  set -g theme_short_path yes
-
 function fish_prompt
   set -l last_command_status $status
   set -l cwd
@@ -13,11 +9,11 @@ function fish_prompt
   end
 
   set -l fish     ">"
-  set -l ahead    "↑"
-  set -l behind   "↓"
-  set -l diverged "⥄ "
-  set -l dirty    "⨯"
-  set -l none     "◦"
+  set -l ahead    "⬆️  "
+  set -l behind   "⬇️ "
+  set -l diverged "❕ "
+  set -l dirty    "✖ "
+  set -l none     ""
 
   set -l normal_color     (set_color normal)
   # set -l success_color    (set_color $fish_pager_color_progress 2> /dev/null; or set_color cyan)
@@ -40,7 +36,7 @@ function fish_prompt
     end
 
     echo -n -s " " $directory_color $cwd $normal_color
-    echo -n -s " on " $repository_color (git_branch_name) $normal_color " "
+    echo -n -s " on " $repository_color "("(git_branch_name)")" $normal_color " "
 
     if git_is_touched
       echo -n -s $dirty
@@ -48,8 +44,13 @@ function fish_prompt
       echo -n -s (git_ahead $ahead $behind $diverged $none)
     end
   else
-    echo -n -s " " $directory_color $cwd $normal_color
+    echo -n -s " " $directory_color $cwd $normal_color " "
   end
 
+  set -l colors 444 666 aaa
+  for color in $colors
+    echo -n (set_color $color)">"
+  end
   echo -n -s " "
+  
 end
