@@ -9,7 +9,7 @@ function fish_prompt
   end
 
   set -l fish     ">"
-  set -l ahead    "⬆️  "
+  set -l ahead    "⬆️ "
   set -l behind   "⬇️ "
   set -l diverged "❕ "
   set -l dirty    "✖ "
