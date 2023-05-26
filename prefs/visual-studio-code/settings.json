@@ -1,5 +1,5 @@
 {
-  // "workbench.settings.editor": "json",
+  "workbench.settings.editor": "json",
   "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.iconTheme": "vscode-icons",
   "workbench.productIconTheme": "fluent-icons",
