@@ -3,15 +3,26 @@
   "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.iconTheme": "vscode-icons",
   "workbench.productIconTheme": "fluent-icons",
+  "workbench.startupEditor": false,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontSize": 14,
   "editor.fontFamily": "'JetBrains Mono'",
+  "editor.fontLigatures": true,
   "editor.rulers": [80],
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
   "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "telemetry.telemetryLevel": "off",
+  "update.showReleaseNotes": false,
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
