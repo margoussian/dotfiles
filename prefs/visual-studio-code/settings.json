@@ -26,5 +26,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "security.workspace.trust.untrustedFiles": "open",
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "svelte.enable-ts-plugin": true,
+  "emmet.includeLanguages": {
+    "svelte": "html"
+  },
+  "window.zoomLevel": 2
 }
