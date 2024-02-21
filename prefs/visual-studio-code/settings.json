@@ -25,11 +25,36 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "yaml.customTags": [
+    "!Base64 scalar",
+    "!Cidr scalar",
+    "!And sequence",
+    "!Equals sequence",
+    "!If sequence",
+    "!Not sequence",
+    "!Or sequence",
+    "!Condition scalar",
+    "!FindInMap sequence",
+    "!GetAtt scalar",
+    "!GetAtt sequence",
+    "!GetAZs scalar",
+    "!ImportValue scalar",
+    "!Join sequence",
+    "!Select sequence",
+    "!Split sequence",
+    "!Sub scalar",
+    "!Sub sequence",
+    "!Transform mapping",
+    "!Ref scalar"
+  ],
   "security.workspace.trust.untrustedFiles": "open",
   "explorer.confirmDelete": false,
   "svelte.enable-ts-plugin": true,
+  "terminal.integrated.fontSize": 14,
   "emmet.includeLanguages": {
     "svelte": "html"
   },
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.openFoldersInNewWindow": "on",
   "window.zoomLevel": 2
 }

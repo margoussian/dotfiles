@@ -45,12 +45,14 @@ brew "ruby"
 brew "jq"
 brew "hub"
 brew "diff-so-fancy"
-brew "exa"
+brew "eza"
 brew "dust"
 brew "nvm"
 brew "ssh-copy-id"
 brew "m-cli"
 brew "tmux"
+brew "pyenv"
+brew "pyenv-virtualenvwrapper"
 EOS
 
 brew install --cask imageoptim iterm2 1password aerial qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook suspicious-package

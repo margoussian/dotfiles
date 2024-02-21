@@ -10,5 +10,5 @@ if test -e ~/.config/fish/locals.fish
     source ~/.config/fish/locals.fish
 end
 
-alias ls 'exa --all --long --header --group-directories-first --git'
+alias ls 'eza --all --long --header --group-directories-first --git'
 
