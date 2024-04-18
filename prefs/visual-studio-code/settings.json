@@ -16,6 +16,9 @@
   "files.trimTrailingWhitespace": true,
   "telemetry.telemetryLevel": "off",
   "update.showReleaseNotes": false,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
