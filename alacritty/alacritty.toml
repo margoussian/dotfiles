@@ -1,4 +1,4 @@
-import = ["/home/vaheh/.config/alacritty/challenger-deep.toml"]
+import = ["~/.config/alacritty/challenger-deep.toml"]
 live_config_reload = true
 
 [cursor.style]
