@@ -50,7 +50,7 @@
     # Make `git rebase` safer on OS X
     # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
     trustctime = false
-    editor = subl
+	editor = vim
 
 [color]
     # Use colors in Git commands that are capable of colored output when
@@ -99,3 +99,5 @@
 [user]
 	email = vmargoussian@edmunds.com
 	name = Vaheh Margoussian
+[init]
+	defaultBranch = master
