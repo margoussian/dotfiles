@@ -1,6 +1,5 @@
 # Config reference: https://alacritty.org/config-alacritty.html
-
-import = ["~/.config/alacritty/challenger-deep.toml"]
+[general]
 live_config_reload = true
 
 [cursor.style]
@@ -61,3 +60,5 @@ blur = true
 [window.padding]
 x = 0
 y = 4
+
+import = ["~/.config/alacritty/challenger-deep.toml"]
