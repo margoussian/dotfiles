@@ -30,3 +30,4 @@ node_modules
 .extra
 .idea/
 *.iml
+deps.txt
