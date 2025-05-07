@@ -4,17 +4,16 @@ ROOT="$(pwd)"
 set -e
 
 main() {
-    "$ROOT/symlink-common.sh"
+  "$ROOT/symlink-common.sh"
 
-    if [[ $(uname -s) == "Darwin" ]]; then
-        "$ROOT/install-macos-fonts.sh"
-        "$ROOT/config-macos.sh"
-        "$ROOT/install-macos-dev-apps.sh"
-        "$ROOT/config-git.sh"
-        "$ROOT/install-macos-desktop-apps.sh"
-    elif [[ $(uname -s) == "Linux" ]]; then
-        "$ROOT/install-linux.sh"
-    fi
+  if [[ $(uname -s) == "Darwin" ]]; then
+    "$ROOT/install-macos-fonts.sh"
+    "$ROOT/config-macos.sh"
+    "$ROOT/install-macos-dev-apps.sh"
+    "$ROOT/install-macos-desktop-apps.sh"
+  elif [[ $(uname -s) == "Linux" ]]; then
+    "$ROOT/install-linux.sh"
+  fi
 }
 
 main
