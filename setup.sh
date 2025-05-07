@@ -4,7 +4,6 @@ ROOT="$(pwd)"
 set -e
 
 main() {
-  "$ROOT/symlink-common.sh"
 
   if [[ $(uname -s) == "Darwin" ]]; then
     "$ROOT/install-macos-fonts.sh"
