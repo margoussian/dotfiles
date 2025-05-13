@@ -1,5 +1,5 @@
 function dnsflush -d "Flush DNS Cache"
-    echo Flushing DNS Cache.   May prompt for sudo password...
+    echo Flushing DNS Cache. May prompt for sudo password...
 
     switch (command uname)
         case Darwin \*BSD

@@ -12,8 +12,7 @@ if test -e ~/.config/fish/locals.fish
     source ~/.config/fish/locals.fish
 end
 
-# Replace cd with zoxide
-zoxide init fish | source
 alias cd="z"
 alias ls 'eza --all --long --group-directories-first --no-permissions --octal-permissions --hyperlink --git --time-style="+%Y-%m-%d %H:%M" $argv'
 alias v="nvim $argv"
+alias cat="bat $argv"
