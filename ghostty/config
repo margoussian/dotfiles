@@ -1,0 +1,6 @@
+theme = ChallengerDeep
+font-thicken = true
+font-size = 16
+mouse-hide-while-typing = true
+macos-icon = xray
+shell-integration = fish
