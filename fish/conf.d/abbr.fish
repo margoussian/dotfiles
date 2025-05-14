@@ -11,6 +11,6 @@ if status is-interactive
     abbr --add gs "git status --short"
     abbr --add gd 'git diff --output-indicator-new=" " --output-indicator-old=" "'
     abbr --add gl 'git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'
-    abbr --add gp 'git push'
+    abbr --add gp 'git push origin'
     abbr --add gr 'git reset'
 end
