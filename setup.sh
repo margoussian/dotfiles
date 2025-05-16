@@ -5,6 +5,8 @@ set -e
 
 main() {
 
+  stow .
+
   if [[ $(uname -s) == "Darwin" ]]; then
     "$ROOT/install-macos-fonts.sh"
     "$ROOT/config-macos.sh"
