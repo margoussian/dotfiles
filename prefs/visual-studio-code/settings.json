@@ -12,7 +12,7 @@
   "editor.fontLigatures": true,
   "editor.rulers": [120],
   "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 80,
+  "editor.wordWrapColumn": 120,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "telemetry.telemetryLevel": "off",
@@ -104,6 +104,7 @@
     "function-return-type",
     "interface-with-generics",
     "generic-slots-in-functions",
-    "interface-with-multiple-generics"
+    "interface-with-multiple-generics",
+    "non-null-expression"
   ]
 }
