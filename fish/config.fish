@@ -17,7 +17,7 @@ alias ls 'eza --all --long --group-directories-first --no-permissions --octal-pe
 alias v="nvim $argv"
 alias cat="bat $argv"
 if test (uname) = "Darwin"
-    alias z="zed $argv"
+    alias zed="zed $argv"
 else
-    alias z="zeditor $argv"
+    alias zed="zeditor $argv"
 end
