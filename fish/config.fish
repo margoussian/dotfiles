@@ -16,3 +16,8 @@ alias cd="z"
 alias ls 'eza --all --long --group-directories-first --no-permissions --octal-permissions --hyperlink --git --time-style="+%Y-%m-%d %H:%M" $argv'
 alias v="nvim $argv"
 alias cat="bat $argv"
+if test (uname) = "Darwin"
+    alias z="zed $argv"
+else
+    alias z="zeditor $argv"
+end
