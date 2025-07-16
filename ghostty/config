@@ -4,3 +4,5 @@ font-size = 16
 mouse-hide-while-typing = true
 macos-icon = xray
 shell-integration = fish
+term = xterm-256color
+keybind = shift+enter=text:\n
