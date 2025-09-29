@@ -1,32 +1,57 @@
-[user]
-  name = Vaheh Margoussian
-
-[core]
-  compression = 9
-  fsync = none
-  whitespace = error
-  editor = nvim
-
-[init]
-  defaultBranch = master
-
 [advice]
   addEmptyPathSpec = false
   pushNonFastForward = false
   statusHints = false
 
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+
 [blame]
   coloring = highlightRecent
   date = relative
+
+[color "branch"]
+  current  = magenta
+  local    = default
+  remote   = yellow
+  upstream = green
+  plain    = blue
+
+[color "diff"]
+  meta       = black bold
+  frag       = magenta
+  context    = white
+  whitespace = yellow reverse
+
+[core]
+  compression = 9
+  fsync = none
+  whitespace = error
+  editor = zeditor
 
 [diff]
   context = 3
   renames = copies
   interHunkContext = 10
 
+[init]
+  defaultBranch = master
+
 [log]
   abbrevCommit = true # short commits
   graphColors = blue,yellow,cyan,magenta,green,red
+
+[pager]
+  branch = false
+
+[pull]
+  rebase = true
+
+[rebase]
+  autoStash = true
 
 [status]
   branch = true
@@ -34,24 +59,9 @@
   showStash = true
   showUntrackedFiles = all
 
-[pager]
-  branch = false
-
-[rebase]
-  autoStash = true
-
-[color "branch"]
-    current  = magenta
-    local    = default
-    remote   = yellow
-    upstream = green
-    plain    = blue
-
-[color "diff"]
-    meta       = black bold
-    frag       = magenta
-    context    = white
-    whitespace = yellow reverse
-
 [url "git@github.com:"]
-    insteadOf = "gh:"
+  insteadOf = "gh:"
+
+[user]
+  name = Vaheh Margoussian
+  email = vaheh@margoussian.com
