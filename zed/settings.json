@@ -21,7 +21,7 @@
     "anthropic": {}
   },
   "remove_trailing_whitespace_on_save": true,
-  "show_whitespaces": "all",
+  "show_whitespaces": "boundary",
   "tabs": {
     "git_status": true
   },

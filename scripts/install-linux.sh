@@ -8,7 +8,6 @@ PACKAGES=(
     stow
     fish
     git
-    git-extras
     tmux
     fzf
     bat
@@ -31,12 +30,19 @@ sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
 # Set fish as default shell
 if [[ "$SHELL" != *"fish"* ]]; then
     echo "Setting fish as default shell..."
-    chsh -s $(which fish)
+    chsh -s $(which fish) || true
 fi
 
-# Install Fisher plugin manager
-echo "Installing Fisher plugin manager..."
-fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+# Copy fish_plugins FIRST so Fisher can read it
+# (We can't stow yet because the fish directory structure conflicts)
+echo "Copying fish_plugins for Fisher..."
+mkdir -p ~/.config/fish
+cd "$(dirname "$0")/.."
+cp fish/fish_plugins ~/.config/fish/fish_plugins
+
+# Install Fisher plugin manager and all plugins from fish_plugins
+echo "Installing Fisher and Fish plugins..."
+fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
 
 # Configure Tide prompt
 echo "Configuring Tide prompt..."

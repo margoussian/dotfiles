@@ -6,7 +6,6 @@ set -e
 main() {
 
   cd "$ROOT"
-  stow .
 
   if [[ $(uname -s) == "Darwin" ]]; then
     "$ROOT/scripts/install-macos.sh"
@@ -14,6 +13,8 @@ main() {
   elif [[ $(uname -s) == "Linux" ]]; then
     "$ROOT/scripts/install-linux.sh"
   fi
+
+  stow .
 }
 
 main

@@ -3,3 +3,4 @@
 --ignore=DS_Store
 --ignore=scripts
 --ignore=README.md
+--ignore=fish_plugins

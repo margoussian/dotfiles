@@ -1,2 +1,4 @@
 # Machine-specific configuration files
 fish/locals.fish
+docker-compose.yml
+Dockerfile

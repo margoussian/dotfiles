@@ -103,9 +103,9 @@ setup_fish() {
     echo "$(brew --prefix)/bin/fish" | sudo tee -a /etc/shells
     sudo chsh -s /usr/local/bin/fish $(whoami)
 
-    # Install Fisher plugin manager
-    echo "Installing Fisher plugin manager..."
-    fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+    # Install Fisher plugin manager and all plugins from fish_plugins
+    echo "Installing Fisher and Fish plugins..."
+    fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
 
     # Configure Tide prompt
     echo "Configuring Tide prompt..."
