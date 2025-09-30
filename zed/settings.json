@@ -12,16 +12,13 @@
     "default_model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-latest"
-    },
-    "version": "2"
+    }
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 16,
   "ensure_final_newline_on_save": true,
   "language_models": {
-    "anthropic": {
-      "version": "1"
-    }
+    "anthropic": {}
   },
   "remove_trailing_whitespace_on_save": true,
   "show_whitespaces": "all",
@@ -36,7 +33,7 @@
     "font_size": 14,
     "font_family": "JetBrainsMono Nerd Font"
   },
-  "theme": "GitHub Dark Default",
+  "theme": "One Dark",
   "ui_font_family": "Adwaita Sans",
   "ui_font_size": 16
 }
