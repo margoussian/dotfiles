@@ -34,4 +34,16 @@ if [[ "$SHELL" != *"fish"* ]]; then
     chsh -s $(which fish)
 fi
 
+# Install Fisher plugin manager
+echo "Installing Fisher plugin manager..."
+fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+
+# Install TPM (Tmux Plugin Manager)
+echo "Installing TPM (Tmux Plugin Manager)..."
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+    echo "TPM already installed, skipping..."
+fi
+
 echo "Linux packages installed successfully"

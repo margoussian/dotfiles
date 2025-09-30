@@ -102,6 +102,20 @@ setup_fish() {
 
     echo "$(brew --prefix)/bin/fish" | sudo tee -a /etc/shells
     sudo chsh -s /usr/local/bin/fish $(whoami)
+
+    # Install Fisher plugin manager
+    echo "Installing Fisher plugin manager..."
+    fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+}
+
+install_tpm() {
+    echo "Installing TPM (Tmux Plugin Manager)..."
+
+    if [ ! -d ~/.tmux/plugins/tpm ]; then
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    else
+        echo "TPM already installed, skipping..."
+    fi
 }
 
 main() {
@@ -111,6 +125,7 @@ main() {
     install_desktop_apps
     install_fonts
     setup_fish
+    install_tpm
 
     echo "macOS packages installed successfully"
 }
