@@ -1,0 +1,15 @@
+# locals.fish.example
+# Copy this to ~/.config/fish/locals.fish and customize for your machine
+# This file is ignored by git and won't be stowed
+
+# Example: Machine-specific PATH additions
+# set -xg PATH /custom/bin $PATH
+
+# Example: Alternative editor
+# set -xg EDITOR vim
+
+# Example: Machine-specific aliases
+# alias work="cd ~/work-projects"
+
+# Example: API keys or tokens (never commit these!)
+# set -xg GITHUB_TOKEN "your-token-here"

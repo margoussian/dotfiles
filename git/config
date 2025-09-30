@@ -31,6 +31,7 @@
   fsync = none
   whitespace = error
   editor = zeditor
+  excludesfile = ~/.config/git/ignore
 
 [diff]
   context = 3

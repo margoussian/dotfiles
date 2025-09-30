@@ -1,19 +1,18 @@
 #!/usr/bin/env bash
-ROOT="$(pwd)"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 set -e
 
 main() {
 
+  cd "$ROOT"
   stow .
 
   if [[ $(uname -s) == "Darwin" ]]; then
-    "$ROOT/install-macos-fonts.sh"
-    "$ROOT/config-macos.sh"
-    "$ROOT/install-macos-dev-apps.sh"
-    "$ROOT/install-macos-desktop-apps.sh"
+    "$ROOT/scripts/install-macos.sh"
+    "$ROOT/scripts/config-macos.sh"
   elif [[ $(uname -s) == "Linux" ]]; then
-    "$ROOT/install-linux.sh"
+    "$ROOT/scripts/install-linux.sh"
   fi
 }
 

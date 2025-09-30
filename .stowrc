@@ -1,8 +1,5 @@
 --target=~/.config
 --ignore=.stowrc
 --ignore=DS_Store
---ignore=config-macos.sh
---ignore=install-linux.sh
---ignore=install-macos-desktop-apps.sh
---ignore=install-macos-dev-apps.sh
---ignore=macos-fonts.sh
+--ignore=scripts
+--ignore=README.md
