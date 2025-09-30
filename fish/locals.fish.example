@@ -12,10 +12,10 @@
 # alias work="cd ~/work-projects"
 
 # Example: Docker Compose shortcuts
-# alias pgup="cd ~/dev/infrastructure/postgres; and docker-compose up -d"
-# alias pgdown="cd ~/dev/infrastructure/postgres; and docker-compose stop"
-# alias redisup="cd ~/dev/infrastructure/redis; and docker-compose pull; and docker-compose up -d"
-# alias redisdown="cd ~/dev/infrastructure/redis; and docker-compose stop"
+# alias pgup="cd ~/Projects/infrastructure/postgres; and docker-compose up -d"
+# alias pgdown="cd ~/Projects/infrastructure/postgres; and docker-compose stop"
+# alias redisup="cd ~/Projects/infrastructure/redis; and docker-compose pull; and docker-compose up -d"
+# alias redisdown="cd ~/Projects/infrastructure/redis; and docker-compose stop"
 
 # Example: API keys or tokens (never commit these!)
 # set -xg GITHUB_TOKEN "your-token-here"
