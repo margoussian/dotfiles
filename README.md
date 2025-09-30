@@ -38,13 +38,29 @@ curl -sL https://github.com/margoussian/dotfiles/archive/master.tar.gz | tar xz 
 
 ## Manual Steps After Installation
 
-1. **Machine-Specific Config**: Copy and customize locals file
+1. **Restart Shell**: Log out and back in, or restart your terminal for shell changes to take effect
+
+2. **Tmux Plugins**: First time launching tmux, install plugins
+   - Press `prefix` + <kbd>I</kbd> (capital I) to install plugins
+   - Default prefix is `Ctrl+a`
+
+3. **Machine-Specific Config**: Copy and customize locals file (optional)
    ```bash
    cp ~/.config/fish/locals.fish.example ~/.config/fish/locals.fish
-   # Edit with machine-specific settings
+   # Edit with machine-specific settings, aliases, environment variables
    ```
 
-2. **GitHub CLI**: Authenticate with GitHub
+4. **GitHub CLI**: Authenticate with GitHub
    ```bash
    gh auth login
    ```
+
+## Verify Installation
+
+After completing setup, verify everything works:
+
+- [ ] Open a new terminal - Fish should be your default shell
+- [ ] Check prompt - Tide prompt should be configured
+- [ ] Test aliases: `ls`, `cat`, `v`, `zed`
+- [ ] Git commands work with your identity
+- [ ] Tmux launches with correct theme and settings

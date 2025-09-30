@@ -48,11 +48,20 @@
 [pager]
   branch = false
 
+[push]
+  autoSetupRemote = true
+
 [pull]
   rebase = true
 
+[fetch]
+  prune = true
+
 [rebase]
   autoStash = true
+
+[merge]
+  conflictstyle = diff3
 
 [status]
   branch = true
