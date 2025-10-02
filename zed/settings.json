@@ -35,7 +35,7 @@
     "font_family": "JetBrainsMono Nerd Font"
   },
   "theme": "One Dark",
-  "ui_font_family": "Adwaita Sans",
+  "ui_font_family": ".SystemUIFont",
   "ui_font_size": 16,
   "relative_line_numbers": true
 }
