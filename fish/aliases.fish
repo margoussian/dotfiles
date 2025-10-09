@@ -12,3 +12,9 @@ if test (uname) = "Darwin"
 else
     alias zed="zeditor $argv"
 end
+
+# Tailscale exit node
+function ts-exit-on
+    sudo tailscale up --exit-node=$argv[1] --accept-dns
+end
+alias ts-exit-off="sudo tailscale up --exit-node="
