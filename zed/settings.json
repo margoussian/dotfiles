@@ -7,13 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "vim_mode": true,
   "agent": {
-    "model_parameters": [],
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-latest"
-    }
+      "model": "claude-sonnet-4-latest",
+      "provider": "anthropic"
+    },
+    "model_parameters": []
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 16,
@@ -21,21 +20,36 @@
   "language_models": {
     "anthropic": {}
   },
+  "relative_line_numbers": true,
   "remove_trailing_whitespace_on_save": true,
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "scrollbar": {
+    "axes": {
+      "horizontal": false
+    },
+    "cursors": true,
+    "git_diff": true,
+    "selected_text": false,
+    "show": "auto"
+  },
   "show_whitespaces": "boundary",
+  "soft_wrap": "editor_width",
   "tabs": {
     "git_status": true
   },
   "telemetry": {
-    "metrics": false,
-    "diagnostics": false
+    "diagnostics": false,
+    "metrics": false
   },
   "terminal": {
-    "font_size": 14,
-    "font_family": "JetBrainsMono Nerd Font"
+    "font_family": "JetBrainsMono Nerd Font",
+    "font_size": 14
   },
   "theme": "One Dark",
-  "ui_font_family": ".SystemUIFont",
+  "toolbar": {
+    "code_actions": true
+  },
+  "ui_font_family": ".ZedMono",
   "ui_font_size": 16,
-  "relative_line_numbers": true
+  "vim_mode": true
 }
