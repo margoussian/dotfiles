@@ -51,5 +51,5 @@
   },
   "ui_font_family": ".ZedMono",
   "ui_font_size": 16,
-  "vim_mode": true
+  "vim_mode": false
 }

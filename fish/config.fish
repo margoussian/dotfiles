@@ -4,6 +4,10 @@ if status is-interactive; and test -e /opt/homebrew/bin/brew
     eval $(/opt/homebrew/bin/brew shellenv)
 end
 
+if status is-interactive; and test -e /usr/bin/try
+    eval (/usr/bin/try init ~/src/tries | string collect)
+end
+
 set -xg PATH $HOME/.local/bin $HOME/bin $PATH
 set -xg EDITOR (which zeditor) -w
 
