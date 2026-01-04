@@ -20,7 +20,7 @@
   "language_models": {
     "anthropic": {}
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "remove_trailing_whitespace_on_save": true,
   "scroll_beyond_last_line": "vertical_scroll_margin",
   "scrollbar": {

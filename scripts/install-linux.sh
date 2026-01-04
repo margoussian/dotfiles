@@ -22,6 +22,7 @@ PACKAGES=(
     lazydocker
     lazygit
     alacritty
+    zoxide
 )
 
 echo "Installing packages: ${PACKAGES[*]}"
