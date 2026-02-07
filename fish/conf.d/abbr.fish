@@ -13,4 +13,5 @@ if status is-interactive
     abbr --add gl 'git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'
     abbr --add gp 'git push origin'
     abbr --add gr 'git reset'
+    abbr --add gbp 'git fetch --prune && git branch --merged | grep -v '\*\|main\|master' | xargs -r git branch -d'
 end
