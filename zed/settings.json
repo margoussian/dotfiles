@@ -10,46 +10,51 @@
   "agent": {
     "default_model": {
       "model": "claude-sonnet-4-latest",
-      "provider": "anthropic"
+      "provider": "anthropic",
     },
-    "model_parameters": []
+    "model_parameters": [],
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 16,
   "ensure_final_newline_on_save": true,
   "language_models": {
-    "anthropic": {}
+    "anthropic": {},
+  },
+  "languages": {
+    "CSS": {
+      "language_servers": ["tailwindcss-language-server"],
+    },
   },
   "relative_line_numbers": "enabled",
   "remove_trailing_whitespace_on_save": true,
   "scroll_beyond_last_line": "vertical_scroll_margin",
   "scrollbar": {
     "axes": {
-      "horizontal": false
+      "horizontal": false,
     },
     "cursors": true,
     "git_diff": true,
     "selected_text": false,
-    "show": "auto"
+    "show": "auto",
   },
   "show_whitespaces": "boundary",
   "soft_wrap": "editor_width",
   "tabs": {
-    "git_status": true
+    "git_status": true,
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "terminal": {
     "font_family": "JetBrainsMono Nerd Font",
-    "font_size": 14
+    "font_size": 14,
   },
   "theme": "One Dark",
   "toolbar": {
-    "code_actions": true
+    "code_actions": true,
   },
   "ui_font_family": ".ZedMono",
   "ui_font_size": 16,
-  "vim_mode": false
+  "vim_mode": false,
 }
