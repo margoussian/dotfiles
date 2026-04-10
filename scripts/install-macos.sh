@@ -76,6 +76,9 @@ install_dev_tools() {
 	brew "lazydocker"
 	brew "lazygit"
 	brew "uv"
+	brew "stow"
+	brew "fish"
+	brew "zoxide"
 	EOS
 
     install_cask_if_absent "imageoptim" "/Applications/ImageOptim.app"
@@ -97,59 +100,12 @@ install_fonts() {
     brew install --cask font-jetbrains-mono
 }
 
-setup_fish() {
-    echo "Setting up Fish shell..."
-
-    brew install fish
-
-    local fish_path
-    fish_path="$(brew --prefix)/bin/fish"
-
-    if ! grep -qF "$fish_path" /etc/shells; then
-        echo "$fish_path" | sudo tee -a /etc/shells
-    fi
-
-    sudo chsh -s "$fish_path" "$(whoami)"
-
-    echo "Installing Fisher..."
-    fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
-
-    echo "Installing Fish plugins..."
-    fish -c "fisher install IlanCosman/tide@v6"
-
-    echo "Configuring Tide prompt..."
-    fish -c "tide configure --auto --style=Lean --prompt_colors='True color' --show_time=No --lean_prompt_height='Two lines' --prompt_connection=Dotted --prompt_connection_andor_frame_color=Darkest --prompt_spacing=Compact --icons='Few icons' --transient=No"
-}
-
-install_tpm() {
-    echo "Installing TPM (Tmux Plugin Manager)..."
-
-    if [ ! -d ~/.tmux/plugins/tpm ]; then
-        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    else
-        echo "TPM already installed, skipping."
-    fi
-}
-
-install_claude_code() {
-    echo "Installing Claude Code..."
-
-    if command -v claude &>/dev/null; then
-        echo "Claude Code already installed ($(claude --version)), skipping."
-    else
-        curl -fsSL https://claude.ai/install.sh | bash
-    fi
-}
-
 main() {
     install_xcode_tools
     install_homebrew
     install_dev_tools
     install_desktop_apps
     install_fonts
-    setup_fish
-    install_tpm
-    install_claude_code
 
     echo "macOS packages installed successfully"
 }
