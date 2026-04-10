@@ -4,20 +4,20 @@ echo "Installing macOS packages..."
 set -e
 
 install_xcode_tools() {
-    if [[ $(xcode-select --version) ]]; then
+    if xcode-select --version &>/dev/null; then
         echo "Xcode command line tools already installed. Skipping."
     else
-        echo "Installing Xcode commandline tools"
+        echo "Installing Xcode command line tools"
         xcode-select --install
     fi
 }
 
 install_homebrew() {
-    if [[ $(brew --version) ]]; then
-        echo "Homebrew is already installed, attempting to update from version $(brew --version)"
+    if brew --version &>/dev/null; then
+        echo "Homebrew already installed, updating from version $(brew --version)"
         brew update
     else
-        echo "Attempting to install Homebrew"
+        echo "Installing Homebrew..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
 
@@ -26,15 +26,24 @@ install_homebrew() {
     brew upgrade --cask
     brew cleanup || true
 
-    echo "Effective Homebrew version:"
-    brew --version
+    echo "Homebrew version: $(brew --version)"
 }
 
 brewover() {
-    if brew ls --versions "$1"; then
-        brew upgrade "$1"
+    if brew ls --versions "$1" &>/dev/null; then
+        brew upgrade "$1" 2>/dev/null || true
     else
         brew install "$1"
+    fi
+}
+
+install_cask_if_absent() {
+    local cask="$1"
+    local app_path="$2"
+    if ! [ -e "$app_path" ]; then
+        brew install --cask "$cask"
+    else
+        echo "$cask already installed, skipping."
     fi
 }
 
@@ -46,12 +55,10 @@ install_dev_tools() {
     brewover go || true
 
     brew bundle --file=- <<-EOS
-	tap "homebrew/cask"
 	brew "git"
 	brew "git-extras"
 	brew "ruby"
 	brew "jq"
-	brew "hub"
 	brew "diff-so-fancy"
 	brew "eza"
 	brew "dust"
@@ -59,8 +66,6 @@ install_dev_tools() {
 	brew "ssh-copy-id"
 	brew "m-cli"
 	brew "tmux"
-	brew "pyenv"
-	brew "pyenv-virtualenvwrapper"
 	brew "bat"
 	brew "ripgrep"
 	brew "fzf"
@@ -70,29 +75,26 @@ install_dev_tools() {
 	brew "gh"
 	brew "lazydocker"
 	brew "lazygit"
+	brew "uv"
 	EOS
 
-    brew install --cask imageoptim ghostty 1password aerial qlstephen qlmarkdown quicklook-json quicklook-csv qlimagesize webpquicklook suspicious-package visual-studio-code
-
-    # Symlink VSCode CLI
-    ln -sf /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
+    install_cask_if_absent "imageoptim" "/Applications/ImageOptim.app"
+    install_cask_if_absent "ghostty" "/Applications/Ghostty.app"
+    install_cask_if_absent "1password" "/Applications/1Password.app"
+    install_cask_if_absent "qlmarkdown" "/Applications/QLMarkdown.app"
+    install_cask_if_absent "suspicious-package" "/Applications/Suspicious Package.app"
+    install_cask_if_absent "quicklook-csv" "$HOME/Library/QuickLook/QuickLookCSV.qlgenerator"
 }
 
 install_desktop_apps() {
     echo "Installing desktop apps..."
 
-    brew install --cask \
-        librewolf \
-        firefox \
-        slack
+    install_cask_if_absent "firefox" "/Applications/Firefox.app"
 }
 
 install_fonts() {
     echo "Installing JetBrains Mono font..."
-
-    curl -LO https://download.jetbrains.com/fonts/JetBrainsMono-1.0.0.zip 2>/dev/null
-    unzip -o JetBrainsMono-1.0.0.zip -d ~/Library/Fonts/
-    rm JetBrainsMono-1.0.0.zip
+    brew install --cask font-jetbrains-mono
 }
 
 setup_fish() {
@@ -100,14 +102,21 @@ setup_fish() {
 
     brew install fish
 
-    echo "$(brew --prefix)/bin/fish" | sudo tee -a /etc/shells
-    sudo chsh -s /usr/local/bin/fish $(whoami)
+    local fish_path
+    fish_path="$(brew --prefix)/bin/fish"
 
-    # Install Fisher plugin manager and all plugins from fish_plugins
-    echo "Installing Fisher and Fish plugins..."
-    fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
+    if ! grep -qF "$fish_path" /etc/shells; then
+        echo "$fish_path" | sudo tee -a /etc/shells
+    fi
 
-    # Configure Tide prompt
+    sudo chsh -s "$fish_path" "$(whoami)"
+
+    echo "Installing Fisher..."
+    fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+
+    echo "Installing Fish plugins..."
+    fish -c "fisher install IlanCosman/tide@v6"
+
     echo "Configuring Tide prompt..."
     fish -c "tide configure --auto --style=Lean --prompt_colors='True color' --show_time=No --lean_prompt_height='Two lines' --prompt_connection=Dotted --prompt_connection_andor_frame_color=Darkest --prompt_spacing=Compact --icons='Few icons' --transient=No"
 }
@@ -118,7 +127,17 @@ install_tpm() {
     if [ ! -d ~/.tmux/plugins/tpm ]; then
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     else
-        echo "TPM already installed, skipping..."
+        echo "TPM already installed, skipping."
+    fi
+}
+
+install_claude_code() {
+    echo "Installing Claude Code..."
+
+    if command -v claude &>/dev/null; then
+        echo "Claude Code already installed ($(claude --version)), skipping."
+    else
+        curl -fsSL https://claude.ai/install.sh | bash
     fi
 }
 
@@ -130,6 +149,7 @@ main() {
     install_fonts
     setup_fish
     install_tpm
+    install_claude_code
 
     echo "macOS packages installed successfully"
 }
