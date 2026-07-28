@@ -33,3 +33,4 @@ node_modules
 deps.txt
 
 **/.claude/settings.local.json
+.superpowers/
