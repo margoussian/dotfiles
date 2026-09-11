@@ -64,6 +64,9 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+# Increase Screenshot thumbnail linger time
+defaults write com.apple.screencaptureui "thumbnailExpiration" -float 30 && killall SystemUIServer
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
@@ -254,4 +257,3 @@ for app in "Activity Monitor" "cfprefsd" "Dock" "Finder" "Safari" "SystemUIServe
 done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-
