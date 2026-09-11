@@ -97,7 +97,7 @@ install_desktop_apps() {
 
 install_fonts() {
     echo "Installing JetBrains Mono font..."
-    brew install --cask font-jetbrains-mono
+    brew install --cask font-jetbrains-mono-nerf-font
 }
 
 main() {
