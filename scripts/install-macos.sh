@@ -87,6 +87,7 @@ install_dev_tools() {
     install_cask_if_absent "qlmarkdown" "/Applications/QLMarkdown.app"
     install_cask_if_absent "suspicious-package" "/Applications/Suspicious Package.app"
     install_cask_if_absent "quicklook-csv" "$HOME/Library/QuickLook/QuickLookCSV.qlgenerator"
+    install_cask_if_absent "obsidian" "/Application/Obsidian.app"
 }
 
 install_desktop_apps() {
