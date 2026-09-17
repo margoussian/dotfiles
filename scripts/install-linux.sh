@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-echo "Installing Linux packages..."
+source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
 set -e
+
+section "Installing Linux packages"
 
 PACKAGES=(
     stow
@@ -24,7 +26,8 @@ PACKAGES=(
     zoxide
 )
 
-echo "Installing packages: ${PACKAGES[*]}"
+step "Installing packages"
+echo "${PACKAGES[*]}"
 sudo pacman -S --needed --noconfirm "${PACKAGES[@]}"
 
-echo "Linux packages installed successfully"
+ok "Linux packages installed successfully"

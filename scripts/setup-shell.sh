@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+source "$ROOT/scripts/lib.sh"
 
 set -e
 
+section "Setting up shell environment"
+
 setup_fish() {
-    echo "Setting up Fish shell..."
+    step "Fish shell"
 
     local fish_path
     if [[ $(uname -s) == "Darwin" ]]; then
@@ -31,7 +34,7 @@ setup_fish() {
         echo "Installing Fisher and plugins..."
         fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install" < "$ROOT/fish/fish_plugins"
     else
-        echo "Fisher already installed, installing/updating plugins..."
+        skip "Fisher already installed, updating plugins"
         fish -c "fisher install" < "$ROOT/fish/fish_plugins"
     fi
 
@@ -39,25 +42,29 @@ setup_fish() {
         echo "Configuring Tide prompt..."
         fish -c "tide configure --auto --style=Lean --prompt_colors='True color' --show_time=No --lean_prompt_height='Two lines' --prompt_connection=Dotted --prompt_connection_andor_frame_color=Darkest --prompt_spacing=Compact --icons='Few icons' --transient=No"
     else
-        echo "Tide already configured, skipping."
+        skip "Tide already configured"
     fi
+
+    ok "Fish shell ready"
 }
 
 install_tpm() {
-    echo "Installing TPM (Tmux Plugin Manager)..."
+    step "TPM (Tmux Plugin Manager)"
     if [ ! -d ~/.tmux/plugins/tpm ]; then
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        ok "TPM installed"
     else
-        echo "TPM already installed, skipping."
+        skip "TPM already installed"
     fi
 }
 
 install_claude_code() {
-    echo "Installing Claude Code..."
+    step "Claude Code"
     if command -v claude &>/dev/null; then
-        echo "Claude Code already installed ($(claude --version)), skipping."
+        skip "Already installed ($(claude --version))"
     else
         curl -fsSL https://claude.ai/install.sh | bash
+        ok "Claude Code installed"
     fi
 }
 
@@ -65,6 +72,8 @@ main() {
     setup_fish
     install_tpm
     install_claude_code
+
+    ok "Shell environment ready"
 }
 
 main

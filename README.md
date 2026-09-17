@@ -21,8 +21,37 @@ curl -sL https://github.com/margoussian/dotfiles/archive/master.tar.gz | tar xz 
 
 - Installs essential CLI tools and dependencies
 - Configures Fish as the default shell
-- Symlinks configuration files to `~/.config/` using GNU Stow
+- Symlinks configuration files to `~/.config/` using GNU Stow, with
+  `--no-folding` so real directories are created and only tracked files are
+  linked (see [Stow layout](#stow-layout))
 - Platform-specific setup (macOS system preferences, etc.)
+
+## Stow Layout
+
+Stow runs with `--no-folding` (set in `.stowrc`). Without it, Stow collapses a
+package whose target directory does not yet exist into a single *directory*
+symlink -- `~/.config/fish -> this repo`. Everything fisher, tide and Zed then
+write to `~/.config` lands inside the working tree, filling the repo with
+untracked files. With `--no-folding`, Stow creates real directories and links
+only leaf files, so tool-generated state stays in `~/.config`.
+
+### Upgrading a machine set up before this fix
+
+`./scripts/setup.sh` repairs the old layout automatically:
+
+```bash
+cd ~/Projects/dotfiles
+git status          # commit or discard local changes first
+git pull
+./scripts/setup.sh
+```
+
+It removes the folded symlinks, moves tool-generated files out to `~/.config`,
+and restows so only tracked config is linked. Re-running it is a no-op.
+
+Note that anything *untracked* inside a package directory is treated as
+tool-generated and moved to `~/.config`, so commit any work you mean to keep
+before running it.
 
 ## Platform-Specific Notes
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # ~/.osx — https://mths.be/osx
+source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
-echo "Configuring Mac"
+section "Configuring macOS defaults"
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -256,4 +257,5 @@ for app in "Activity Monitor" "cfprefsd" "Dock" "Finder" "Safari" "SystemUIServe
     killall "${app}" > /dev/null 2>&1
 done
 
-echo "Done. Note that some of these changes require a logout/restart to take effect."
+ok "macOS defaults configured"
+echo "Note that some of these changes require a logout/restart to take effect."

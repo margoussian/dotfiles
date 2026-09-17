@@ -9,7 +9,15 @@ if status is-interactive; and test -e /usr/bin/try
 end
 
 set -xg PATH $HOME/.local/bin $HOME/bin $PATH
-set -xg EDITOR (which zeditor) -w
+# Zed's CLI is `zed` (Homebrew cask on macOS); `zeditor` is the Linux name.
+# Guard the lookup: an unguarded `(which zeditor)` that found nothing left
+# EDITOR set to the bare string "-w".
+for zed_cli in zed zeditor
+    if command --query $zed_cli
+        set -xg EDITOR $zed_cli --wait
+        break
+    end
+end
 
 # Activate mise if installed
 if command -v mise &> /dev/null

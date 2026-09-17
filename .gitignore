@@ -2,3 +2,16 @@
 fish/locals.fish
 docker-compose.yml
 Dockerfile
+
+# Defense in depth for tool-generated state.
+#
+# --no-folding in .stowrc is what actually keeps these out of the repo: stow
+# creates real directories under ~/.config and links only leaf files, so the
+# files fisher/tide/zed generate land in ~/.config rather than in here. These
+# entries are a backstop in case a package ever gets folded into a directory
+# symlink again (which happens when its ~/.config target dir doesn't exist).
+#
+# Scoped to a path on purpose -- a bare "prompts" would match any directory
+# named prompts at any depth, silently swallowing files you meant to track.
+fish/fish_variables
+zed/prompts/

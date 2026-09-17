@@ -30,7 +30,7 @@
   compression = 9
   fsync = none
   whitespace = error
-  editor = zeditor
+  editor = zed --wait
   excludesfile = ~/.config/git/ignore
 
 [diff]

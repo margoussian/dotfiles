@@ -1,6 +1,11 @@
 --target=~/.config
+--no-folding
 --ignore=.stowrc
 --ignore=DS_Store
 --ignore=scripts
 --ignore=README.md
---ignore=fish_plugins
+# NOTE: fish_plugins is intentionally NOT ignored. It is the declarative
+# list of plugins and the source of truth for `fisher update`. Linking it
+# means `fisher install X` records the new plugin as a tracked change here,
+# which is what we want -- unlike the function/completion files fisher
+# generates, which now land in the real ~/.config/fish (see --no-folding).

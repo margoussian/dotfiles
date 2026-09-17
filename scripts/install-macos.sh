@@ -1,20 +1,24 @@
 #!/usr/bin/env bash
-echo "Installing macOS packages..."
+source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 
 set -e
 
+section "Installing macOS packages"
+
 install_xcode_tools() {
+    step "Xcode command line tools"
     if xcode-select --version &>/dev/null; then
-        echo "Xcode command line tools already installed. Skipping."
+        skip "Already installed"
     else
-        echo "Installing Xcode command line tools"
         xcode-select --install
+        ok "Xcode command line tools installed"
     fi
 }
 
 install_homebrew() {
+    step "Homebrew"
     if brew --version &>/dev/null; then
-        echo "Homebrew already installed, updating from version $(brew --version)"
+        skip "Already installed ($(brew --version | head -1))"
         brew update
     else
         echo "Installing Homebrew..."
@@ -26,7 +30,7 @@ install_homebrew() {
     brew upgrade --cask
     brew cleanup || true
 
-    echo "Homebrew version: $(brew --version)"
+    ok "Homebrew ready ($(brew --version | head -1))"
 }
 
 brewover() {
@@ -43,12 +47,12 @@ install_cask_if_absent() {
     if ! [ -e "$app_path" ]; then
         brew install --cask "$cask"
     else
-        echo "$cask already installed, skipping."
+        skip "$cask already installed"
     fi
 }
 
 install_dev_tools() {
-    echo "Installing development tools..."
+    step "Development tools"
 
     brewover python || true
     brewover awscli || true
@@ -83,22 +87,28 @@ install_dev_tools() {
 
     install_cask_if_absent "imageoptim" "/Applications/ImageOptim.app"
     install_cask_if_absent "ghostty" "/Applications/Ghostty.app"
+    install_cask_if_absent "zed" "/Applications/Zed.app"
     install_cask_if_absent "1password" "/Applications/1Password.app"
     install_cask_if_absent "qlmarkdown" "/Applications/QLMarkdown.app"
     install_cask_if_absent "suspicious-package" "/Applications/Suspicious Package.app"
     install_cask_if_absent "quicklook-csv" "$HOME/Library/QuickLook/QuickLookCSV.qlgenerator"
-    install_cask_if_absent "obsidian" "/Application/Obsidian.app"
+    install_cask_if_absent "obsidian" "/Applications/Obsidian.app"
+
+    ok "Development tools installed"
 }
 
 install_desktop_apps() {
-    echo "Installing desktop apps..."
+    step "Desktop apps"
 
     install_cask_if_absent "firefox" "/Applications/Firefox.app"
+
+    ok "Desktop apps installed"
 }
 
 install_fonts() {
-    echo "Installing JetBrains Mono font..."
+    step "Fonts"
     brew install --cask font-jetbrains-mono-nerd-font
+    ok "JetBrains Mono Nerd Font installed"
 }
 
 main() {
@@ -108,7 +118,7 @@ main() {
     install_desktop_apps
     install_fonts
 
-    echo "macOS packages installed successfully"
+    ok "macOS packages installed successfully"
 }
 
 main
