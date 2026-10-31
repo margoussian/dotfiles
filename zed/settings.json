@@ -20,6 +20,12 @@
     "dock": "left"
   },
   "agent_servers": {
+    "codex-acp": {
+      "default_config_options": {
+        "model": "gpt-6-luna"
+      },
+      "type": "registry"
+    },
     "claude-acp": {
       "default_config_options": {
         "effort": "medium",
@@ -56,6 +62,23 @@
     "CSS": {
       "language_servers": ["tailwindcss-language-server"],
     },
+  },
+  "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "customTags": [
+            "!GetAtt scalar",
+            "!Sub scalar",
+            "!Sub mapping",
+            "!Sub sequence",
+            "!Ref scalar",
+            "!Ref mapping",
+            "!Ref sequence"
+          ]
+        }
+      }
+    }
   },
   "relative_line_numbers": "enabled",
   "remove_trailing_whitespace_on_save": true,
